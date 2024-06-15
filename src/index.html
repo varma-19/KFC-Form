@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFC - Online</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../src/index.js"></script>
+</head>
+<body class="container-fluid">
+    <header>
+        <img src="../public/images/kfc.jpg" width="100%">
+    </header>
+    <section>
+        <div class="accordion" id="kfc">
+     
+            <!-- Customer Details Item -->
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <button data-bs-target="#customer" data-bs-toggle="collapse" class="btn btn-danger w-100"> Customer Details </button>
+                </div>
+                <div class="accordion-collapse collapse show" id="customer" data-bs-parent="#kfc">
+                    <div class="accordion-body bg-danger text-white mt-1">
+                        <dl>
+                            <dt>Customer Name</dt>
+                            <dd><input type="text" id="txtName" class="form-control"></dd>
+                            <dt>Mobile</dt>
+                            <dd><input type="text" id="txtMobile" class="form-control"></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meal Details Item -->
+           
+            <div class="accordion-item">
+                <div class="accordion-header">
+                     <button data-bs-target="#meal" data-bs-toggle="collapse" class="btn btn-danger w-100">Select Your Meal</button>
+                </div>
+                <div class="accordion-collapse collapse" id="meal" data-bs-parent="#kfc">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card m-2 p-2">
+                                    <img src="../public/images/omg1.PNG" class="card-img-top" height="200">
+                                    <div class="card-header">
+                                        <h2>OMG Burger</h2>
+                                    </div>
+                                    <div class="card-footer">
+                                        <input type="radio" id="optBurger" value="OMG Burger" name="meal" class="form-check-input"> <label> &#8377; 120/-</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card m-2 p-2">
+                                    <img src="../public/images/omg2.PNG" class="card-img-top" height="200">
+                                    <div class="card-header">
+                                        <h2>OMG Roller</h2>
+                                    </div>
+                                    <div class="card-footer">
+                                        <input type="radio" id="optRoller" value="OMG Roller" name="meal" class="form-check-input"> <label> &#8377; 100/-</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add-ON Details Item -->
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                     <button data-bs-target="#adon" data-bs-toggle="collapse" class="btn btn-danger w-100">Select Ad-ONs</button>
+                </div>
+                <div class="accordion-collapse collapse" id="adon" data-bs-parent="#kfc">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card m-2 p-2">
+                                    <img src="../public/images/krusher1.PNG" class="card-img-top" height="200">
+                                    <div class="card-header">
+                                        <h2>Krusher Brownie</h2>
+                                    </div>
+                                    <div class="card-footer">
+                                        <input type="checkbox" id="optKrusher" value="Krusher Brownie" class="form-check-input"> <label> &#8377; 40/-</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card m-2 p-2">
+                                    <img src="../public/images/wings.PNG" class="card-img-top" height="200">
+                                    <div class="card-header">
+                                        <h2>Hot Wings</h2>
+                                    </div>
+                                    <div class="card-footer">
+                                        <input type="checkbox" id="optWings" value="Hot Wings" class="form-check-input"> <label> &#8377; 80/-</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button data-bs-target="#summary" onclick="SummaryClick()" data-bs-toggle="modal" class="btn btn-danger w-100">Order Summary</button>
+       
+        <!-- Model for Order Summary -->
+        <div class="modal fade" id="summary">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Your Order Summary</h2>
+                        <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <dl>
+                                    <dt>Customer Name</dt>
+                                    <dd id="lblName"></dd>
+                                    <dt>Mobile</dt>
+                                    <dd id="lblMobile"></dd>
+                                    <dt>Meal</dt>
+                                    <dd id="lblMeal"></dd>
+                                    <dt>Ad-ON</dt>
+                                    <dd id="lblAdon"></dd>
+                                    <dt>Total</dt>
+                                    <dd id="lblTotal"></dd>
+                                </dl>
+                            </div>
+                            <div class="col">
+                                <img id="imgMeal" width="100%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
